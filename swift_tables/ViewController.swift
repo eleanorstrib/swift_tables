@@ -10,7 +10,8 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
-    
+    @IBOutlet weak var scrollView: UIScrollView!
+
     //Define model
     let canadianPT = [
         "Newfoundland & Labrador",
@@ -30,7 +31,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     // Get number of rows to pass to the view
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        println(self.canadianPT.count)
         return self.canadianPT.count
     }
     
@@ -41,7 +41,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         //tell the dequeued cell what data to show
         cell.textLabel?.text = self.canadianPT[indexPath.row]
         //return the updated cell
-        println(cell)
         return cell
     }
     
